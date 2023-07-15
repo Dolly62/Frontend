@@ -7,25 +7,25 @@ function App() {
       title: "Car Insurance",
       amount: 294.67,
       date: new Date(2021, 2, 28),
-      LocationOfExpenditure: 'Delhi'
+      location: 'Delhi'
     },
     {
       title: "Car Insurance",
       amount: 294.67,
       date: new Date(2021, 2, 28),
-      LocationOfExpenditure: 'Faridabad'
+      location: 'Faridabad'
+    },
+    {
+      title: "Car Repairing",
+      amount: 294.67,
+      date: new Date(2021, 2, 28),
+      location: 'Punjab'
     },
     {
       title: "Car Insurance",
       amount: 294.67,
       date: new Date(2021, 2, 28),
-      LocationOfExpenditure: 'Punjab'
-    },
-    {
-      title: "Car Insurance",
-      amount: 294.67,
-      date: new Date(2021, 2, 28),
-      LocationOfExpenditure: 'Gujarat'
+      location: 'Gujarat'
     },
   ];
   return (
@@ -36,7 +36,7 @@ function App() {
         <ExpenseItem
           key={index}
           title={expense.title}
-          LocationOfExpenditure={expense.LocationOfExpenditure}
+          location={expense.location}
           amount={expense.amount}
           date={expense.date}
         />
