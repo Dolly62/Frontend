@@ -1,9 +1,21 @@
-import React from "react";
-import './FormDetails.css'
+import React, { useState } from "react";
+import "./FormDetails.css";
 
 const FormDetails = () => {
-  const showOnConsole = (event) => {
-    console.log(event.target.value);
+  const [title, setTitle] = useState("");
+  const [amount, setAmount] = useState("");
+  const [date, setDate] = useState("");
+
+  const enteredTitle = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const enteredAmount = (event) => {
+    setAmount(event.target.value);
+  };
+
+  const enteredDate = (event) => {
+    setDate(event.target.value);
   };
 
   return (
@@ -15,7 +27,7 @@ const FormDetails = () => {
             type="text"
             id="expenseTitle"
             name="expenseTitle"
-            onChange={showOnConsole}
+            onChange={enteredTitle}
             required
           />
         </div>
@@ -27,7 +39,7 @@ const FormDetails = () => {
             id="expenseAmount"
             name="expenseAmount"
             min="0.00"
-            onChange={showOnConsole}
+            onChange={enteredAmount}
             required
           />
         </div>
@@ -38,7 +50,7 @@ const FormDetails = () => {
             type="date"
             id="expenseDate"
             name="expenseDate"
-            onChange={showOnConsole}
+            onChange={enteredDate}
             required
           />
         </div>

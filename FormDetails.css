@@ -1,23 +1,26 @@
-
-
-.expense{
-    padding: 8px 22px;
-}
-
-label{
+.expenses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  
+  .expense label {
     font-weight: bold;
-}
-input{
-    padding: 8px 50px
-}
-
-button {
-    background-color: #04AA6D;
-    border: none;
-    color: white;
-    text-decoration: none;
-    padding: 8px 12px;
-    margin: 4px 2px;
-    width: 100px;
-    cursor: pointer;
-}
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .expense input {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+  }
+  
+  .submitAction {
+    text-align: right;
+  }
