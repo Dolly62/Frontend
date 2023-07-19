@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import "./FormDetails.css";
 
-const FormDetails = () => {
+const FormDetails = (props) => {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
 
-  const enteredTitle = (event) => {
+  const titleChangedHandler = (event) => {
     setTitle(event.target.value);
   };
 
-  const enteredAmount = (event) => {
+  const amountChangedHandler = (event) => {
     setAmount(event.target.value);
   };
 
-  const enteredDate = (event) => {
+  const dateChangedHandler = (event) => {
     setDate(event.target.value);
   };
 
@@ -28,7 +28,10 @@ const FormDetails = () => {
       date: new Date(date),
     };
 
-    console.log(expenseData);
+    props.onSaveExpenseData(expenseData);
+    setTitle('');
+    setAmount('');
+    setDate('');
   };
 
   return (
@@ -40,7 +43,8 @@ const FormDetails = () => {
             type="text"
             id="expenseTitle"
             name="expenseTitle"
-            onChange={enteredTitle}
+            value={title}
+            onChange={titleChangedHandler}
             required
           />
         </div>
@@ -52,7 +56,8 @@ const FormDetails = () => {
             id="expenseAmount"
             name="expenseAmount"
             min="0.00"
-            onChange={enteredAmount}
+            value={amount}
+            onChange={amountChangedHandler}
             required
           />
         </div>
@@ -63,7 +68,8 @@ const FormDetails = () => {
             type="date"
             id="expenseDate"
             name="expenseDate"
-            onChange={enteredDate}
+            value={date}
+            onChange={dateChangedHandler}
             required
           />
         </div>
@@ -73,6 +79,7 @@ const FormDetails = () => {
         <button type="submit">Add Expense</button>
       </div>
     </form>
+    
   );
 };
 
