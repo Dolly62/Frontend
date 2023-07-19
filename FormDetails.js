@@ -18,8 +18,21 @@ const FormDetails = () => {
     setDate(event.target.value);
   };
 
+  // form Submitted Handler
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const expenseData = {
+      title: title,
+      amount: amount,
+      date: new Date(date),
+    };
+
+    console.log(expenseData);
+  };
+
   return (
-    <form className="form">
+    <form className="form" onSubmit={submitHandler}>
       <div className="expenses">
         <div className="expense">
           <label for="expenseTitle">Expense Title:</label>
