@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 import ExpenseDetails from "./ExpenseDetails";
@@ -6,32 +6,26 @@ import ExpenseDetails from "./ExpenseDetails";
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
-  const expenseItemRef = useRef(null);
-  // const [title, setTitle] = useState(props.title);
-  const [amount, setAmount] = useState(props.amount);
+  // const expenseItemRef = useRef(null);
+  // // const [title, setTitle] = useState(props.title);
+  // const [amount, setAmount] = useState(props.amount);
 
-  const deleteExpense = () => {
-    if (expenseItemRef.current) {
-      expenseItemRef.current.remove();
-    }
-  };
+  // const deleteExpense = () => {
+  //   if (expenseItemRef.current) {
+  //     expenseItemRef.current.remove();
+  //   }
+  // };
 
-  const updateExpense = () => {
-    setAmount('$100');
-  };
+
   // First component
   return (
-    <div className="expense-item" ref={expenseItemRef}>
+    <div className="expense-item">
       <ExpenseDate date={props.date} />
       <ExpenseDetails
         title={props.title}
         location={props.location}
-        amount={amount}
+        amount={props.amount}
       />
-      <button className="btn" onClick={deleteExpense}>
-        Delete Expense
-      </button>
-      <button onClick={updateExpense}>Update Expense</button>
     </div>
   );
 };
